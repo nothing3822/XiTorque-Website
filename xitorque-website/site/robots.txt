@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://xitorque.com/sitemap.xml
