@@ -1,0 +1,32 @@
+{
+  "_help": "Edit this file, then run: python build.py   (from the xitorque-source folder). Leave a value as \"\" to hide it on the site.",
+  "site_url": "https://nothing3822.github.io",
+  "custom_domain": "xitorque.com",
+  "brand": "Xitorque Solutions",
+  "short": "Xitorque",
+  "studio": "Xitorque Studio",
+  "tagline": "Apps, websites & online stores that grow your business",
+  "location": "Sukkur, Pakistan",
+  "founder": "Afaque",
+  "whatsapp": "",
+  "email": "",
+  "currency": "PKR",
+  "wa_default": "Hi Xitorque! I found you on your website and I'd like to talk about a project.",
+  "links": {
+    "github": "https://github.com/nothing3822",
+    "fiverr": "https://www.fiverr.com/m_affaque",
+    "gumroad": "https://mashoria6.gumroad.com/l/bmqaqy",
+    "daraz_store": "",
+    "upwork": "",
+    "instagram": "",
+    "facebook": "",
+    "youtube": "",
+    "tiktok": "",
+    "linkedin": ""
+  },
+  "shopify_theme": {
+    "status": "soon",
+    "demo_url": "",
+    "buy_url": ""
+  }
+}
