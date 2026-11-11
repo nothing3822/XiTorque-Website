@@ -1,0 +1,4 @@
+Contact: mailto:mashoriafaq3822@gmail.com
+Expires: 2027-12-31T00:00:00.000Z
+Preferred-Languages: en, ur
+Canonical: https://xitorque.com/.well-known/security.txt
