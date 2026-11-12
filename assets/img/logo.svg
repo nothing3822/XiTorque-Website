@@ -1,5 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Xitorque">
-<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6d28d9"/><stop offset=".55" stop-color="#a855f7"/><stop offset="1" stop-color="#22d3ee"/></linearGradient></defs>
-<rect width="64" height="64" rx="16" fill="url(#g)"/>
-<path d="M19 18 45 46M45 18 19 46" stroke="#fff" stroke-width="7" stroke-linecap="round" fill="none"/>
-<circle cx="47" cy="17" r="4" fill="#fff" opacity=".9"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Xitorque"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6d28d9"/><stop offset=".55" stop-color="#a855f7"/><stop offset="1" stop-color="#22d3ee"/></linearGradient></defs><rect width="64" height="64" rx="16" fill="url(#g)"/><path transform="translate(19.51,45.54) scale(0.02251,-0.02251)" d="M766 -287H1046V-63C1046 182 922 269 683 269H624C470 269 393 321 393 435C393 559 484 618 653 618H942V882H691C521 882 449 945 449 1038C449 1168 592 1213 850 1235L1014 1249V1490H108V1228L438 1243C243 1209 119 1145 119 1000C119 823 303 768 493 752C278 733 64 659 64 386C64 146 248 0 548 0H648C750 0 766 -14 766 -111Z" fill="#fff"/></svg>
