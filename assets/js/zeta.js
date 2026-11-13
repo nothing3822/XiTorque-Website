@@ -73,10 +73,18 @@
   function render(text, cls) {
     var div = document.createElement('div');
     div.className = 'zt-msg ' + cls;
+    function plain(target, s) { // renders **bold** safely, everything else as text
+      var bits = s.split(/\*\*([^*]+)\*\*/g);
+      bits.forEach(function (b, j) {
+        if (!b) return;
+        if (j % 2) { var st = document.createElement('strong'); st.textContent = b; target.appendChild(st); }
+        else target.appendChild(document.createTextNode(b));
+      });
+    }
     var parts = String(text).split(/(https?:\/\/[^\s<>")]+)/g);
     parts.forEach(function (p, i) {
       if (i % 2) { var a = document.createElement('a'); a.href = p; a.target = '_blank'; a.rel = 'noopener'; a.textContent = p.replace(/^https?:\/\//, ''); div.appendChild(a); }
-      else if (p) div.appendChild(document.createTextNode(p));
+      else if (p) plain(div, p);
     });
     body.appendChild(div); body.scrollTop = body.scrollHeight;
     return div;
