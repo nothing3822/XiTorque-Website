@@ -73,19 +73,30 @@
   function render(text, cls) {
     var div = document.createElement('div');
     div.className = 'zt-msg ' + cls;
-    function plain(target, s) { // renders **bold** safely, everything else as text
-      var bits = s.split(/\*\*([^*]+)\*\*/g);
-      bits.forEach(function (b, j) {
+    function link(target, href, label) {
+      var a = document.createElement('a');
+      a.href = /^https?:\/\//.test(href) ? href : 'https://' + href;
+      a.target = '_blank'; a.rel = 'noopener';
+      a.textContent = (label || href).replace(/^https?:\/\//, '');
+      target.appendChild(a);
+    }
+    function plain(target, s) { // **bold** + bare URLs, everything else as text
+      s.split(/\*\*([^*]+)\*\*/g).forEach(function (b, j) {
         if (!b) return;
-        if (j % 2) { var st = document.createElement('strong'); st.textContent = b; target.appendChild(st); }
-        else target.appendChild(document.createTextNode(b));
+        var host = j % 2 ? document.createElement('strong') : target;
+        b.split(/(https?:\/\/[^\s<>")]+)/g).forEach(function (p, i) {
+          if (!p) return;
+          if (i % 2) link(host, p); else host.appendChild(document.createTextNode(p));
+        });
+        if (j % 2) target.appendChild(host);
       });
     }
-    var parts = String(text).split(/(https?:\/\/[^\s<>")]+)/g);
-    parts.forEach(function (p, i) {
-      if (i % 2) { var a = document.createElement('a'); a.href = p; a.target = '_blank'; a.rel = 'noopener'; a.textContent = p.replace(/^https?:\/\//, ''); div.appendChild(a); }
-      else if (p) plain(div, p);
-    });
+    // markdown links [label](url) first, then the rest
+    var md = String(text).split(/\[([^\]\n]+)\]\(\s*((?:https?:\/\/)?[^\s)]+?)\s*\)/g);
+    for (var i = 0; i < md.length; i++) {
+      if (i % 3 === 0) { if (md[i]) plain(div, md[i]); }
+      else if (i % 3 === 1) { link(div, md[i + 1], md[i]); i++; }
+    }
     body.appendChild(div); body.scrollTop = body.scrollHeight;
     return div;
   }
